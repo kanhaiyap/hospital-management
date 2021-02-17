@@ -1,0 +1,1503 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="urn:absolute:www.disease.com#"
+     xml:base="urn:absolute:www.disease.com"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="urn:absolute:www.disease.com"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_amount -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_amount">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#amount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_appointment -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_appointment">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_blood_group -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_blood_group">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_disease -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_disease">
+        <owl:equivalentProperty rdf:resource="urn:absolute:www.disease.com#has_disease_type"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#injuries"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_disease_type -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_disease_type">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#injuries"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_expericence -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_expericence">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_friend -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_friend">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#friend"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_gender -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_medicine -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_medicine">
+        <owl:inverseOf rdf:resource="urn:absolute:www.disease.com#medicine_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#injuries"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#medicine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_symptom_of -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_symptom_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#injuries"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#has_symptoms -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#has_symptoms">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#injuries"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#symptoms"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#is_located_In -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#is_located_In">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#is_not_located_in -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#is_not_located_in">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#lives_in -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#lives_in">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine_of -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#medicine_of">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#medicine"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#injuries"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#paid_by -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#paid_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#amount"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#payments"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#place_name -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#place_name"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescribed_by -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#prescribed_by">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#medicine"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescribed_to -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#prescribed_to">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#medicine"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#reffered_by -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#reffered_by">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#doctor"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#reffered_to -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#reffered_to">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#treated_by -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#treated_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#treated_in -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:www.disease.com#treated_in">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:www.disease.com#age -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#age">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#attempt -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#attempt">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#city -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#city">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#date -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#date">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#date_of_entry -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#date_of_entry">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:www.disease.com#date"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="urn:absolute:www.disease.com#patient"/>
+                    <rdf:Description rdf:about="urn:absolute:www.disease.com#worker"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#date_of_exit -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#date_of_exit">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:www.disease.com#date"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="urn:absolute:www.disease.com#patient"/>
+                    <rdf:Description rdf:about="urn:absolute:www.disease.com#worker"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#description -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#description">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="urn:absolute:www.disease.com#patient"/>
+                    <rdf:Description rdf:about="urn:absolute:www.disease.com#worker"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#disease_name -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#disease_name">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#injuries"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#experience -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#experience"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#first_name -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#first_name">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:www.disease.com#name"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#gender -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#gender">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#id -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#id">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#intensity -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#intensity">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#injuries"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#last_name -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#last_name">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:www.disease.com#name"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine_name -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#medicine_name">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:www.disease.com#name"/>
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#medicine"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#name -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#name"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#prescription">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#medicine"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:www.disease.com#print_format -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:www.disease.com#print_format">
+        <rdfs:domain rdf:resource="urn:absolute:www.disease.com#prescription"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:www.disease.com#Dietary_vitamins_and_minerals -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#Dietary_vitamins_and_minerals">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#deficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#General -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#General">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#malnutrition"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#Growth -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#Growth">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#malnutrition"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#Mineral_deficiency -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#Mineral_deficiency">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#malnutrition"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#Protein-energy_malnutrition -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#Protein-energy_malnutrition">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#malnutrition"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#Vitamin_deficiency -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#Vitamin_deficiency">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#malnutrition"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#abrasion -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#abrasion">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#open"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#account_handler -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#account_handler">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#amount -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#amount">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#payments"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#anxiety -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#anxiety">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disorer"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#avulsion -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#avulsion">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#open"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#cancer -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#cancer">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disease"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#card -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#card">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#amount"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#cash -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#cash">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#amount"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#cleaner -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#cleaner">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#close -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#close">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#external"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#crush_injury -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#crush_injury">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#close"/>
+        <owl:disjointWith rdf:resource="urn:absolute:www.disease.com#homatomas"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#deficiency -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#deficiency">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disease"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#depression -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#depression">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disorer"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#disease -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#disease">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#internal"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#disorer -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#disorer">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#internal"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#doctor -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#doctor">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#eating -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#eating">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disorer"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#external -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#external">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#injuries"/>
+        <rdfs:label>external</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#family -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#family">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#friend -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#friend">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#hereditory -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#hereditory">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disease"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#homatomas -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#homatomas">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#close"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#hospital_name -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#hospital_name"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#incision -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#incision">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#open"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#infectious -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#infectious">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disease"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#injuries -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#injuries"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#internal -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#internal">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#injuries"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#laceration -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#laceration">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#open"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#malnutrition -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#malnutrition">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#deficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#medicine">
+        <owl:disjointWith rdf:resource="urn:absolute:www.disease.com#symptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#open -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#open">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#external"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#patient">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#payments -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#payments"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#penetration -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#penetration">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#open"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#person -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#person"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#personality -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#personality">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disorer"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#place -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#place"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#prescription"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#psychology -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#psychology">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disorer"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#psychotic -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#psychotic">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#disorer"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#puncture -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#puncture">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#open"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#purchase_incharge -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#purchase_incharge">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#receptionist -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#receptionist">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#store_manager -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#store_manager">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:www.disease.com#symptoms -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#symptoms"/>
+    
+
+
+    <!-- urn:absolute:www.disease.com#worker -->
+
+    <owl:Class rdf:about="urn:absolute:www.disease.com#worker">
+        <rdfs:subClassOf rdf:resource="urn:absolute:www.disease.com#person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:www.disease.com#city_1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#city_1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#place"/>
+        <city>mumbai</city>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#city_2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#city_2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#place"/>
+        <city>delhi</city>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#city_3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#city_3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#place"/>
+        <city>garhwa</city>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#city_4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#city_4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#place"/>
+        <city>bangalore</city>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#city_5 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#city_5">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#place"/>
+        <city>ramna</city>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#doctor_1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#doctor_1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#doctor"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_10"/>
+        <treated_by rdf:resource="urn:absolute:www.disease.com#doctor_1"/>
+        <first_name>lala</first_name>
+        <last_name>lajpat</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#doctor_2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#doctor_2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#doctor"/>
+        <first_name>ddd</first_name>
+        <last_name>dfdc</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#doctor_3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#doctor_3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#doctor"/>
+        <first_name>ccc</first_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#family1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#family1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#family"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#family2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#family2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#family"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#family3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#family3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#family"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#family4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#family4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#family"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#family5 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#family5">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#family"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#friend1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#friend1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#friend"/>
+        <first_name>cdhy</first_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#friend2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#friend2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#friend"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#friend3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#friend3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#friend"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#friend4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#friend4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#friend"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#friend5 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#friend5">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#friend"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#hospital_1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#hospital_1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#hospital_2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#hospital_2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+        <name>app</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#hospital_3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#hospital_3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#hospital_4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#hospital_4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#hospital_name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#kanhaiya_pandey -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#kanhaiya_pandey">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <has_medicine rdf:resource="urn:absolute:www.disease.com#medicine1"/>
+        <has_symptoms rdf:resource="urn:absolute:www.disease.com#symptoms2"/>
+        <treated_by rdf:resource="urn:absolute:www.disease.com#doctor_1"/>
+        <treated_in rdf:resource="urn:absolute:www.disease.com#hospital_1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</age>
+        <city>giddhi</city>
+        <date_of_entry>20 november 2020</date_of_entry>
+        <date_of_exit>25 november 2020</date_of_exit>
+        <disease_name>abc</disease_name>
+        <disease_name>fever</disease_name>
+        <first_name>kanhaiya</first_name>
+        <gender>male</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</id>
+        <intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</intensity>
+        <last_name>kkk</last_name>
+        <last_name>pandey</last_name>
+        <prescription>paracetamol</prescription>
+        <print_format>printed copy
+few hand written</print_format>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#medicine1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#medicine"/>
+        <prescribed_by rdf:resource="urn:absolute:www.disease.com#doctor_3"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_10"/>
+        <name>dolo360</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#medicine2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#medicine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine_1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#medicine_1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#medicine"/>
+        <prescribed_by rdf:resource="urn:absolute:www.disease.com#doctor_2"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_10"/>
+        <medicine_name>paracetamol</medicine_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine_2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#medicine_2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#medicine"/>
+        <prescribed_by rdf:resource="urn:absolute:www.disease.com#doctor_1"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_102"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine_3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#medicine_3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#medicine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#medicine_4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#medicine_4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#medicine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient_10 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#patient_10">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <lives_in rdf:resource="urn:absolute:www.disease.com#city_1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</age>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QLD</city>
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fiorenze</first_name>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">49</id>
+        <intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</intensity>
+        <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Birdall</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient_100 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#patient_100">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <lives_in rdf:resource="urn:absolute:www.disease.com#city_3"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</age>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QLD</city>
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tripp</first_name>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">80</id>
+        <intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</intensity>
+        <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steed</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient_102 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#patient_102">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <treated_by rdf:resource="urn:absolute:www.disease.com#doctor_3"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New South Wales</city>
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Langsdon</first_name>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">51</id>
+        <intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</intensity>
+        <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tranfield</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient_103 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#patient_103">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New South Wales</city>
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ethyl</first_name>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">49</id>
+        <intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</intensity>
+        <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Runham</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient_104 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#patient_104">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New South Wales</city>
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Odille</first_name>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">40</id>
+        <intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</intensity>
+        <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panketh</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient_105 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#patient_105">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New South Wales</city>
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maribeth</first_name>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">25</id>
+        <last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pristnor</last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#patient_106 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#patient_106">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#patient"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VIC</city>
+        <first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glyn</first_name>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</gender>
+        <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54</id>
+        <intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</intensity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#prescription1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#prescription"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_10"/>
+        <medicine_name>xxxxx</medicine_name>
+        <name>paracetamol</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#prescription2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#prescription"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_106"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#prescription3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#prescription"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_102"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#prescription4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#prescription"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription5 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#prescription5">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#prescription"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#prescription_1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#prescription_1">
+        <prescribed_by rdf:resource="urn:absolute:www.disease.com#doctor_1"/>
+        <prescribed_to rdf:resource="urn:absolute:www.disease.com#patient_10"/>
+        <prescription>paracetamol</prescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#symptoms2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#symptoms2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#symptoms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#symptoms3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#symptoms3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#symptoms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#symptoms4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#symptoms4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#symptoms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#symptoms5 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#symptoms5">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#symptoms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#symptoms_1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#symptoms_1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#symptoms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#worker1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#worker1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#worker"/>
+        <experience rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</experience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#worker2 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#worker2">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#worker3 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#worker3">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#worker4 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#worker4">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#worker5 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#worker5">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#worker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#xyz -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#xyz">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#account_handler"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</age>
+        <experience>15 years</experience>
+        <gender>male</gender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#1">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dietary_vitamins_and_minerals</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">General</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Growth</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mineral_deficiency</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protein-energy_malnutrition</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vitamin_deficiency</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abrasion</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anxiety</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">avulsion</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depression</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eating</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homatomas</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">incision</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infectious</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">laceration</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">penetration</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">personality</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psychology</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psychotic</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#10 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#10">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;&apos;Persistent_depressive_disorder_(Dysthymia)&apos;&apos;</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;Situational&apos;_Depression</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B7</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chancroid</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iodine_deficiency</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magnesium</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maylard_Incision</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obsessive_compulsive</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#100 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#100">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exhibitionistic disorder</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tularemia</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#101 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#101">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expressive_language_disorder</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TyphoidFeverD</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#102 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#102">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Factitious_disorder</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Typhus</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#103 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#103">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female_sexual_arousal/interest_disorder</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VaginosisÂ_bacterial</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#104 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#104">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fregoli_delusion</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vaping-AssociatedLungInjury</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:www.disease.com#105 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:www.disease.com#105">
+        <rdf:type rdf:resource="urn:absolute:www.disease.com#psychotic"/>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Frotteuristic_Disorder</disease_name>
+        <disease_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Varicella</disease_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#General"/>
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#Growth"/>
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#Mineral_deficiency"/>
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#Protein-energy_malnutrition"/>
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#Vitamin_deficiency"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#deficiency"/>
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#hereditory"/>
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#infectious"/>
+            <rdf:Description rdf:about="urn:absolute:www.disease.com#psychology"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
